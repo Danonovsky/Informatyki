@@ -13,6 +13,8 @@
       Hasło <br/>  <input type="password" name="haslo"/><br/><br/>
       <input type="submit" value="Zaloguj się"/>
     </form>
-
+  <?php
+  phpinfo();
+  ?>
   </body>
 </html>
