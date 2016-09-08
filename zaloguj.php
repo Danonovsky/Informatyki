@@ -1,10 +1,10 @@
 <?php
 if (isset($_POST['login'])){
-$login1 = $_POST['login'];}
+$login = $_POST['login'];}
 if (isset($_POST['haslo'])){
-$passwd2 = $_POST['haslo'];}
+$haslo = $_POST['haslo'];}
 
-echo $login1 ;
-echo $passwd2;
+echo $login ;
+echo $haslo;
 
 ?>
