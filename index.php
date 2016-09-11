@@ -17,6 +17,10 @@ if ((isset($_SESSION['zalogowany']))&&($_SESSION['zalogowany']==true)){
 
   <body>
   Tylko martwi ujrzeli koniec wojny - Platon<br/><br/>
+
+    <a href="rejestracja.php">Rejestracja - załóż darmowe konto!</a><br/><br/>
+    
+
     <form action="zaloguj.php" method="POST">
       Login: <br/> <input type="text" name="login"/><br/>
       Hasło <br/>  <input type="password" name="haslo"/><br/><br/>
