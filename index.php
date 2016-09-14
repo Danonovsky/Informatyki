@@ -14,7 +14,7 @@ session_start()
       Hasło: <input type="password" name="password"/>
       <input type="submit" value="Zaloguj się"/>
     </form>
-    <br/><a href="register.php">Nie posiadasz konta? Zarejestruj się!</a>
+    <br/><a href="register.php">Nie posiadasz konta? Wypierdzielaj z naszej witryny w takim wypadku! Muahahahaha</a>
   <hr/><br/><br/>
   <center><h1>Strona do zdjęć</h1></center>
   </body>
