@@ -22,6 +22,7 @@ if (!isset($_SESSION['zalogowany']))
 
 
 echo "<p>Witaj ".$_SESSION['user'].'! [ <a href="logout.php">Wyloguj się!</a> ]</p>';
+echo '<a href="add_photo.php"><input type="button" value="Dodaj zdjęcie"></a>';
 
 
 
