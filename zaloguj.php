@@ -39,7 +39,7 @@ else {
             if (password_verify($haslo, $wiersz['haslo']))
             {
                 $_SESSION['zalogowany'] = true;
-                $_SESSION['id'] = $wiersz['id'];
+                $_SESSION['id'] = $wiersz['id_u'];
                 $_SESSION['user'] = $wiersz['login'];
                 $_SESSION['imie_nazwisko'] = $wiersz['imie_nazwisko'];
                 $_SESSION['data_ur'] = $wiersz['data_ur'];

@@ -87,7 +87,7 @@ if (isset($_POST['email']))
         else
         {
             //Czy jest mail?
-            $rezultat = $polaczenie->query("SELECT id FROM uzytkownicy WHERE email='$email'");
+            $rezultat = $polaczenie->query("SELECT id_u FROM uzytkownicy WHERE email='$email'");
             if (!$rezultat)throw new Exception($polaczenie->error);
             $ile_takich_maili = $rezultat->num_rows;
             if ($ile_takich_maili>0)
@@ -97,7 +97,7 @@ if (isset($_POST['email']))
             }
 
             //Czy nick jest zajęty??
-            $rezultat = $polaczenie->query("SELECT id FROM uzytkownicy WHERE login='$nick'");
+            $rezultat = $polaczenie->query("SELECT id_u FROM uzytkownicy WHERE login='$nick'");
             if (!$rezultat)throw new Exception($polaczenie->error);
             $ile_takich_nickow = $rezultat->num_rows;
             if ($ile_takich_nickow>0)

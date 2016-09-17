@@ -58,7 +58,9 @@ if(isset($_FILES['plik']['name']))
         }
         $path_file=$folder.$p_nazwa_zm;
         //ważne date('Y m d');
-        if($polaczenie->query("insert into pics (id_pic,id_u,img_url,date) values(NULL,5,'$path_file','date('Y m d')'") === TRUE)
+        $data=date('Y-m-d');
+        $id_usera=$_SESSION['id'];
+        if($polaczenie->query("insert into pics (id_pic,id_u,img_url,date) values(NULL,'$id_usera','$path_file','$data')") === TRUE)
         {
             echo "udało się";
         }
@@ -85,6 +87,7 @@ if(isset($_FILES['plik']['name']))
         <input type="file" accept="image/*" name="plik" size="50"/>
         <input name="max_file_size" type="hidden" value="1048576" /><br/><br/>
         <input type="submit" value="Wyślij plik!"/>
+        <a href="portal.php"><input type="button" value="Powrót"/></a>
     </div>
 </form>
 </body>
