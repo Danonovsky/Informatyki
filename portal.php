@@ -28,8 +28,10 @@ echo '<a href="add_photo.php"><input type="button" value="Dodaj zdjęcie"></a>';
 
 
 echo "<p> <b>E-mail: </b>".$_SESSION['email'];
-echo '<br/>';
+echo '<hr/><br/>';
+echo '<center>';
 main_page();
+echo '</center>';
 ?>
 
 </body>
