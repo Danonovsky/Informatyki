@@ -1,4 +1,5 @@
 <?php
+require_once "functions.php";
 session_start();
 
 if (!isset($_SESSION['zalogowany']))
@@ -26,9 +27,9 @@ echo '<a href="add_photo.php"><input type="button" value="Dodaj zdjęcie"></a>';
 
 
 
-echo "<p> <b><b>E-mail: </b>".$_SESSION['email'];
-
-
+echo "<p> <b>E-mail: </b>".$_SESSION['email'];
+echo '<br/>';
+main_page();
 ?>
 
 </body>
