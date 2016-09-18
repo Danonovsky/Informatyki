@@ -58,7 +58,7 @@ if(isset($_FILES['plik']['name']))
         }
         $path_file=$folder.$p_nazwa_zm;
         //ważne date('Y m d');
-        $data=date('Y-m-d');
+        $data=date('Y-m-d H-i-s');
         $id_usera=$_SESSION['id'];
         if($polaczenie->query("insert into pics (id_pic,id_u,img_url,date) values(NULL,'$id_usera','$path_file','$data')") === TRUE)
         {

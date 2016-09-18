@@ -7,7 +7,7 @@ function main_page()
     {
         echo "Error: ".$polaczenie->connect_errno;
     }
-    $sql="SELECT * FROM pics ORDER BY date ASC";
+    $sql="SELECT * FROM pics ORDER BY date DESC";
     $rezultat=@$polaczenie->query($sql);
     for($i=0;$i<$rezultat->num_rows;$i++)
     {
