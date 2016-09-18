@@ -20,15 +20,13 @@ if (!isset($_SESSION['zalogowany']))
 <?php
 
 
-
 echo "<p>Witaj ".$_SESSION['user'].'! [ <a href="logout.php">Wyloguj się!</a> ]</p>';
-
-
 
 echo "<p> <b><b>E-mail: </b>".$_SESSION['email'];
 
-
 ?>
+
+
 
 </body>
 </html>
