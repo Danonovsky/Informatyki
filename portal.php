@@ -1,4 +1,5 @@
 <?php
+require_once "functions.php";
 session_start();
 
 if (!isset($_SESSION['zalogowany']))
@@ -20,13 +21,18 @@ if (!isset($_SESSION['zalogowany']))
 <?php
 
 
-echo "<p>Witaj ".$_SESSION['user'].'! [ <a href="logout.php">Wyloguj się!</a> ]</p>';
 
-echo "<p> <b><b>E-mail: </b>".$_SESSION['email'];
+echo "<p>Witaj ".$_SESSION['user'].'! <a href="logout.php"><input type="button" value="Wyloguj się!"/></a></p>';
+echo '<a href="add_photo.php"><input type="button" value="Dodaj zdjęcie"></a>';
 
+
+
+echo "<p> <b>E-mail: </b>".$_SESSION['email'];
+echo '<hr/><br/>';
+echo '<center>';
+main_page();
+echo '</center>';
 ?>
-
-
 
 </body>
 </html>
