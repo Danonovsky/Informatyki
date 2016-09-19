@@ -27,7 +27,19 @@ if($polaczenie->connect_errno!=0)
     echo "Error: ".$polaczenie->connect_errno;
 }
 $sql='SELECT * FROM pics WHERE id_u='.$_SESSION['id'];
+$sql1='SELECT count(id_pic) FROM pics WHERE id_u='.$_SESSION['id'];
 $rezultat=$polaczenie->query($sql);
+$ilosc=$rezultat->num_rows;
+echo "<center>";
+for($i=0;$i<$ilosc;$i++)
+{
+    $rows=$rezultat->fetch_assoc();
+    $pic=$rows['img_url'];
+    $data=$rows['date'];
+    echo $data.'<br/>';
+    echo '<img src="'.$pic.'" width="20%"/><br/>';
+}
+echo "</center>";
 ?>
 </body>
 
