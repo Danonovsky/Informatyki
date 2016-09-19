@@ -29,6 +29,6 @@ if (!isset($_SESSION['zalogowany']))
         <?php user_list();?>
     </div>
     <div style="clear:both"></div>
-</div>    
+</div>
 </body>
 </html>

@@ -34,16 +34,15 @@ function user_list()
         echo "Error: ".$polaczenie->connect_errno;
     }
     $query="SELECT * FROM uzytkownicy";
-    $rezultat=@$polaczenie->query($query);
-    echo $rezultat->num_rows;
-/*
+    $result=@$polaczenie->query($query);
+    $ilosc=$result->num_rows;
     for($i=0;$i<$ilosc;$i++)
     {
-        $row=$rezultat->fetch_assoc();
+        $row=$result->fetch_assoc();
         echo $row['imie_nazwisko'].'<br/>';
         if($i==20)
             break;
-    }*/
+    }
     $polaczenie->close();
 }
 ?>
