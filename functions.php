@@ -1,8 +1,8 @@
 <?php
 function main_page()
 {
-    require_once "connect.php";
-    $polaczenie= @new mysqli($host,$db_user,$db_password,$db_name) or die('Error connecting to mysql');
+    include "connect.php";
+    $polaczenie= new mysqli($host,$db_user,$db_password,$db_name) or die('Error connecting to mysql');
     if($polaczenie->connect_errno!=0)
     {
         echo "Error: ".$polaczenie->connect_errno;
@@ -15,7 +15,7 @@ function main_page()
             break;
         $rows=$rezultat->fetch_assoc();
         $sql2="SELECT imie_nazwisko FROM uzytkownicy WHERE id_u=".$rows['id_u'];
-        $rezultat2=@$polaczenie->query($sql2);
+        $rezultat2=$polaczenie->query($sql2);
         $kto=$rezultat2->fetch_assoc();
         $pic=$rows['img_url'];
         $data=$rows['date'];
@@ -27,8 +27,8 @@ function main_page()
 
 function user_list()
 {
-    require_once "connect.php";
-    $polaczenie= @new mysqli($host,$db_user,$db_password,$db_name) or die('Error connecting to mysql');
+    include "connect.php";
+    $polaczenie= new mysqli($host,$db_user,$db_password,$db_name) or die('Error connecting to mysql');
     if($polaczenie->connect_errno!=0)
     {
         echo "Error: ".$polaczenie->connect_errno;
@@ -39,9 +39,13 @@ function user_list()
     for($i=0;$i<$ilosc;$i++)
     {
         $row=$rezultat->fetch_assoc();
-        echo $row['imie_nazwisko'].'<br/>';
+        $userzy[$i]=$row['imie_nazwisko'];
         if($i==20)
             break;
+    }
+    for($i=0;$i<$ilosc;$i++)
+    {
+        echo '<a href="view_profile.php">'.$userzy[$i].'</a><br/>';
     }
     $polaczenie->close();
 }
