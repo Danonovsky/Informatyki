@@ -20,8 +20,30 @@ function main_page()
         $pic=$rows['img_url'];
         $data=$rows['date'];
         echo $kto['imie_nazwisko'].", dnia ".$data.'<br/>';
-        echo '<img src="'.$pic.'" width="20%"/><br/>';
+        echo '<img src="'.$pic.'" width="20%"/><br/><br/>';
     }
+    $polaczenie->close();
+}
+
+function user_list()
+{
+    require_once "connect.php";
+    $polaczenie= @new mysqli($host,$db_user,$db_password,$db_name) or die('Error connecting to mysql');
+    if($polaczenie->connect_errno!=0)
+    {
+        echo "Error: ".$polaczenie->connect_errno;
+    }
+    $query="SELECT * FROM uzytkownicy";
+    $rezultat=@$polaczenie->query($query);
+    echo $rezultat->num_rows;
+/*
+    for($i=0;$i<$ilosc;$i++)
+    {
+        $row=$rezultat->fetch_assoc();
+        echo $row['imie_nazwisko'].'<br/>';
+        if($i==20)
+            break;
+    }*/
     $polaczenie->close();
 }
 ?>
