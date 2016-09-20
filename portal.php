@@ -38,7 +38,7 @@ if (!isset($_SESSION['zalogowany']))
         </div>
     </div>
     <div id="foot">
-        Ble
+        Just Img! 2016 &copy; Wszelkie prawa zastrzeżone!
     </div>
 </div>
 <script src="jquery-3.1.0.min.js" type="text/javascript"></script>

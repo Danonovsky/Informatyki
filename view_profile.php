@@ -74,7 +74,7 @@ $ilosc=$rezultat2->num_rows;
         </div>
     </div>
     <div id="foot">
-        Bla
+        Just Img! 2016 &copy; Wszelkie prawa zastrzeżone!
     </div>
 </div>
 

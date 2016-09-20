@@ -107,7 +107,7 @@ if(isset($_FILES['plik']['name']))
         </div>
     </div>
     <div id="foot">
-        Bla
+        Just Img! 2016 &copy; Wszelkie prawa zastrzeżone!
     </div>
 </div>
 <script src="jquery-3.1.0.min.js" type="text/javascript"></script>

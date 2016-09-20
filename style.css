@@ -78,6 +78,7 @@ ol > li:first-child
     margin-right: auto;
     margin-top: 15px;
     text-align: center;
+    min-height: 100%;
 }
 
 #box3
