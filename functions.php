@@ -22,8 +22,7 @@ function main_page()
         $kto=$rezultat2->fetch_assoc();
         $pic=$rows['img_url'];
         $data=$rows['date'];
-        echo $kto['imie_nazwisko'].", dnia ".$data.'<br/>';
-        echo '<img src="'.$pic.'" width="400px"/><br/><br/>';
+        echo '<div class="picture">'.$kto['imie_nazwisko'].', dnia '.$data.'<br/><img src="'.$pic.'"/><br/>'.'</div><br/><br/>';
     }
     $polaczenie->close();
 }

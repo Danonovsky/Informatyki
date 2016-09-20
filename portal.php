@@ -65,6 +65,5 @@ if (!isset($_SESSION['zalogowany']))
     });
 
 </script>
-
 </body>
 </html>
