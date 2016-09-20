@@ -20,7 +20,7 @@ function main_page()
         $pic=$rows['img_url'];
         $data=$rows['date'];
         echo $kto['imie_nazwisko'].", dnia ".$data.'<br/>';
-        echo '<img src="'.$pic.'" width="20%"/><br/><br/>';
+        echo '<img src="'.$pic.'" width="400px"/><br/><br/>';
     }
     $polaczenie->close();
 }

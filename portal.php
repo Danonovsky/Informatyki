@@ -14,6 +14,7 @@ if (!isset($_SESSION['zalogowany']))
 <head>
     <meta charset="utf-8"/>
     <meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1"/>
+    <link rel="stylesheet" href="style.css" type="text/css"/>
     <title>Just Img!</title>
 </head>
 

@@ -78,6 +78,7 @@ if(isset($_FILES['plik']['name']))
 <head>
     <meta charset="UTF-8"/>
     <meta http-equiv="x-ua-compatible" content="IE=edge, chrome=1"/>
+    <link rel="stylesheet" href="style.css" type="text/css"/>
     <title>Just Image! - dodaj zdjęcie</title>
 </head>
 <body>

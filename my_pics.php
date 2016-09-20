@@ -12,6 +12,7 @@ if (!isset($_SESSION['zalogowany']))
 <head>
     <meta charset="UTF-8"/>
     <meta http-equiv="x-ua-compatible" content="IE=edge, chrome=1"/>
+    <link rel="stylesheet" href="style.css" type="text/css"/>
     <title>Just Image! - Twoje Zdjęcia</title>
 </head>
 <body>
@@ -36,9 +37,10 @@ for($i=0;$i<$ilosc;$i++)
     $pic=$rows['img_url'];
     $data=$rows['date'];
     echo $data.'<br/>';
-    echo '<img src="'.$pic.'" width="20%"/><br/>';
+    echo '<img src="'.$pic.'" width="400px"/><br/>';
 }
 echo "</center>";
+$polaczenie->close();
 ?>
 </body>
 
