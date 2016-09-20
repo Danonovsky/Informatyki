@@ -17,11 +17,54 @@ body
 #menu
 {
     width: 100%;
+    padding: 5px;
     background-color: #3694FF;
     border-top: 1px solid #0058BD;
     border-bottom: 1px solid #0058BD;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    text-align: center;
+    -webkit-box-shadow: 0px 8px 34px -6px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 8px 34px -6px rgba(0,0,0,0.75);
+    box-shadow: 0px 8px 34px -6px rgba(0,0,0,0.75);
+}
+
+ol
+{
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    line-height: 200%;
+    display: inline-block;
+}
+
+ol a
+{
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+ol > li
+{
+    float:left;
+    width: 150px;
+    height: 40px;
+    border-right: 1px dashed #226CBF;
+}
+
+ol > li:hover
+{
+    background-color: #2461A6;
+    cursor: default;
+}
+
+ol > li:hover a
+{
+    color: #74ADED;
+}
+
+ol > li:first-child
+{
+    border-left: 1px dashed #226CBF;
 }
 
 #box2
@@ -29,6 +72,7 @@ body
     width:1000px;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 15px;
 }
 #content
 {
@@ -37,6 +81,17 @@ body
     width:756px;
     padding:20px;
     border: 2px solid #141414;
+    -webkit-box-shadow: 0px 0px 19px 3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 19px 3px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 19px 3px rgba(0,0,0,0.75);
+}
+
+.picture
+{
+    width: 500px;
+    -webkit-box-shadow: 0px 0px 19px 3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 19px 3px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 19px 3px rgba(0,0,0,0.75);
 }
 
 #user_list
@@ -44,6 +99,7 @@ body
     float: left;
     background-color: #B8B8B8;
     width: 156px;
+    min-height: 300px;
     padding: 20px;
     border: 2px solid #757575;
 }

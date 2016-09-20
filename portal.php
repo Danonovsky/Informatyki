@@ -21,13 +21,16 @@ if (!isset($_SESSION['zalogowany']))
 <body>
 <div id="box">
     <div id="menu">
-        Witaj <?php echo $_SESSION['imie_nazwisko'];?>
-        <b>E-mail: </b><?php echo $_SESSION['email'];?>
-        <a href="logout.php"><input type="button" value="Wyloguj się!"/></a>
+        <ol>
+            <li><?php echo $_SESSION['imie_nazwisko'];?></li>
+            <li><a href="portal.php">Strona główna</a></li>
+            <li><a href="my_pics.php">Moje zdjęcia</a></li>
+            <li><a href="#">O autorach</a></li>
+            <li><a href="logout.php">Wyloguj się</a></li>
+        </ol>
     </div>
     <div id="box2">
         <div id="content">
-            <a href="my_pics.php"><input type="button" value="Moje zdjęcia"/></a><br/>
             <?php main_page();?>
         </div>
         <div id="user_list">
