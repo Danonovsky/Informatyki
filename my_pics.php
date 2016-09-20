@@ -39,6 +39,7 @@ $ilosc=$rezultat->num_rows;
     </div>
     <div id="box2">
         <div id="content">
+            <h1>Twoje zdjęcia!</h1>
             <?php
             for($i=0;$i<$ilosc;$i++)
             {
@@ -55,7 +56,7 @@ $ilosc=$rezultat->num_rows;
         </div>
     </div>
     <div id="foot">
-        Bla;
+        Bla
     </div>
 </div>
 <script src="jquery-3.1.0.min.js" type="text/javascript"></script>

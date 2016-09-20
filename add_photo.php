@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once "functions.php";
 if(!isset($_SESSION['zalogowany']))
 {
     header('Location:index.php');
@@ -82,15 +83,34 @@ if(isset($_FILES['plik']['name']))
     <title>Just Image! - dodaj zdjęcie</title>
 </head>
 <body>
-<form method="post" name="form1" enctype="multipart/form-data">
-    <div align="center">
-        <h1>Dodawanie zdjęcia!</h1>
-        <input type="file" accept="image/*" name="plik" size="50"/>
-        <input name="max_file_size" type="hidden" value="1048576" /><br/><br/>
-        <input type="submit" value="Wyślij plik!"/>
-        <a href="portal.php"><input type="button" value="Powrót"/></a>
+<div id="box">
+    <div id="menu">
+        <ol>
+            <li><?php echo $_SESSION['imie_nazwisko'];?></li>
+            <li><a href="portal.php">Strona główna</a></li>
+            <li><a href="my_pics.php">Moje zdjęcia</a></li>
+            <li><a href="#">O autorach</a></li>
+            <li><a href="logout.php">Wyloguj się</a></li>
+        </ol>
     </div>
-</form>
+    <div id="box2">
+        <div id="content">
+            <form method="post" name="form1" enctype="multipart/form-data">
+                <h1>Dodawanie zdjęcia!</h1>
+                <input type="file" accept="image/*" name="plik" size="50"/>
+                <input name="max_file_size" type="hidden" value="1048576" /><br/><br/>
+                <input type="submit" value="Wyślij plik!"/>
+                <a href="portal.php"><input type="button" value="Powrót"/></a>
+            </form>
+        </div>
+        <div id="user_list">
+            <?php user_list()?>
+        </div>
+    </div>
+    <div id="foot">
+        Bla
+    </div>
+</div>
 <script src="jquery-3.1.0.min.js" type="text/javascript"></script>
 <script>
 

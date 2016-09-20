@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once "connect.php";
+require_once "functions.php";
 if (!isset($_SESSION['zalogowany']) || !isset($_GET['id_odw']))
 {
     header('Location: index.php');
@@ -36,27 +37,47 @@ $ilosc=$rezultat2->num_rows;
     <title>Just Image! - <?php echo $imie_nazwisko; ?></title>
 </head>
 <body>
-<a href="portal.php"><input type="button" value="Powrót"/></a> <a href="logout.php"><input type="button" value="Wyloguj się!"/></a><br/>
-Oglądasz profil użytkownika <?php echo $imie_nazwisko.'. ';
-if($ilosc>0)
-{
-    echo 'Oto jego zdjęcia: ';
-}
-else
-{
-    echo 'Niestety, nie posiada on żadnych zdjęć.';
-}
-?><br/>
-<?php
-for($i=0;$i<$ilosc;$i++)
-{
-    $row=$rezultat2->fetch_assoc();
-    $pic=$row['img_url'];
-    $data=$row['date'];
-    echo $data.'<br/>';
-    echo '<img src="'.$pic.'" width="400px"/><br/>';
-}
-?>
+<div id="box">
+    <div id="menu">
+        <ol>
+            <li><?php echo $_SESSION['imie_nazwisko'];?></li>
+            <li><a href="portal.php">Strona główna</a></li>
+            <li><a href="my_pics.php">Moje zdjęcia</a></li>
+            <li><a href="#">O autorach</a></li>
+            <li><a href="logout.php">Wyloguj się</a></li>
+        </ol>
+    </div>
+    <div id="box2">
+        <div id="content">
+            Oglądasz profil użytkownika <?php echo $imie_nazwisko.'. ';
+            if($ilosc>0)
+            {
+                echo 'Oto jego zdjęcia: ';
+            }
+            else
+            {
+                echo 'Niestety, nie posiada on żadnych zdjęć.';
+            }
+            ?><br/><br/>
+            <?php
+            for($i=0;$i<$ilosc;$i++)
+            {
+                $row=$rezultat2->fetch_assoc();
+                $pic=$row['img_url'];
+                $data=$row['date'];
+                echo '<div class="picture">'.$data.'<br/>'.'<img src="'.$pic.'"/>'.'</div><br/><br/>';
+            }
+            ?>
+        </div>
+        <div id="user_list">
+            <?php user_list()?>
+        </div>
+    </div>
+    <div id="foot">
+        Bla
+    </div>
+</div>
+
 <script src="jquery-3.1.0.min.js" type="text/javascript"></script>
 <script>
 

@@ -48,7 +48,8 @@ function user_list()
     }
     for($i=0;$i<$ilosc;$i++)
     {
-        echo '<a href="view_profile.php?id_odw='.$id_usera[$i].'">'.$userzy[$i].'</a><br/>';
+        if($id_usera[$i]!=$_SESSION['id'])
+            echo '<a href="view_profile.php?id_odw='.$id_usera[$i].'">'.$userzy[$i].'</a><br/>';
     }
     $polaczenie->close();
 }
