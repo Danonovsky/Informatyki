@@ -27,7 +27,6 @@ if($polaczenie->connect_errno!=0)
     echo "Error: ".$polaczenie->connect_errno;
 }
 $sql='SELECT * FROM pics WHERE id_u='.$_SESSION['id'];
-$sql1='SELECT count(id_pic) FROM pics WHERE id_u='.$_SESSION['id'];
 $rezultat=$polaczenie->query($sql);
 $ilosc=$rezultat->num_rows;
 echo "<center>";

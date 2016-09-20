@@ -28,6 +28,9 @@ function main_page()
 function user_list()
 {
     include "connect.php";
+    echo '<script type="text/javascript">
+var $id_u=0;
+</script>';
     $polaczenie= new mysqli($host,$db_user,$db_password,$db_name) or die('Error connecting to mysql');
     if($polaczenie->connect_errno!=0)
     {
@@ -40,12 +43,15 @@ function user_list()
     {
         $row=$rezultat->fetch_assoc();
         $userzy[$i]=$row['imie_nazwisko'];
+        $id_usera[$i]=$row['id_u'];
         if($i==20)
             break;
     }
     for($i=0;$i<$ilosc;$i++)
     {
-        echo '<a href="view_profile.php">'.$userzy[$i].'</a><br/>';
+        echo '<a href="view_profile.php?id_odw='.$id_usera[$i].'">'.$userzy[$i].'</a><br/>';
+        echo $id_usera[$i].'<br/>';
     }
     $polaczenie->close();
 }
+?>
