@@ -19,12 +19,24 @@ if (!isset($_SESSION['zalogowany']))
 </head>
 
 <body>
-Witaj <?php echo $_SESSION['imie_nazwisko'];?> <a href="logout.php"><input type="button" value="Wyloguj się!"/></a><br/>
-<a href="my_pics.php"><input type="button" value="Moje zdjęcia"/></a><br/>
-<b>E-mail: </b><?php echo $_SESSION['email'];?><br/><hr/><br/>
-<?php
-main_page();
-user_list();
-?>
+<div id="box">
+    <div id="menu">
+        Witaj <?php echo $_SESSION['imie_nazwisko'];?>
+        <b>E-mail: </b><?php echo $_SESSION['email'];?>
+        <a href="logout.php"><input type="button" value="Wyloguj się!"/></a>
+    </div>
+    <div id="box2">
+        <div id="content">
+            <a href="my_pics.php"><input type="button" value="Moje zdjęcia"/></a><br/>
+            <?php main_page();?>
+        </div>
+        <div id="user_list">
+            <?php user_list(); ?>
+        </div>
+    </div>
+    <div id="foot">
+        Ble
+    </div>
+</div>
 </body>
 </html>
