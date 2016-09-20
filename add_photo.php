@@ -100,7 +100,6 @@ if(isset($_FILES['plik']['name']))
                 <input type="file" accept="image/*" name="plik" size="50"/>
                 <input name="max_file_size" type="hidden" value="1048576" /><br/><br/>
                 <input type="submit" value="Wyślij plik!"/>
-                <a href="portal.php"><input type="button" value="Powrót"/></a>
             </form>
         </div>
         <div id="user_list">

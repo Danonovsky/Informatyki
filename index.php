@@ -16,22 +16,23 @@
         <title>Just Image!</title>
     </head>
 <body>
+<div id="box3">
     Our World In Your Photos!</br><br/>
-    <form action="zaloguj.php" method="POST">
-        Login:<br/> <input type="text" name="login"/><br>
-        Hasło:<br/> <input type="text" name="haslo"/><br>
-        <input type="submit" value="Zaloguj się"/><br><br>
-        <a href="rejestracja.php">Rejestracja - załóż darmowe konto!</a><br/><br/>
-    </form>
+    <div id="login">
+        <form action="zaloguj.php" method="POST">
+            <input type="text" name="login" placeholder="Login"/><br>
+            <input type="password" name="haslo" placeholder="Hasło"/><br>
+            <?php
+            if (isset($_SESSION['blad']))
+            {
+                echo '<span style="font-size: 20px;">'.$_SESSION['blad'].'</span>';
+            }
+            ?>
+            <input type="submit" value="Zaloguj się"/><br/>
+            <span style="font-size: 20px;"><a href="rejestracja.php">Rejestracja - załóż darmowe konto!</a></span>
+        </form>
 
-    <?php
-        if (isset($_SESSION['blad']))
-        {
-            echo $_SESSION['blad'];
-        }
-    ?>
-
-
+    </div>
+</div>
 </body>
-
 </html>

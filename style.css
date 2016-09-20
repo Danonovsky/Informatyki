@@ -27,6 +27,7 @@ body
 img
 {
     width: 500px;
+    border-radius: 3px;
 }
 
 ol
@@ -57,6 +58,7 @@ ol > li:hover
 {
     background-color: #2461A6;
     cursor: default;
+    border-radius: 4px;
 }
 
 ol > li:hover a
@@ -75,7 +77,135 @@ ol > li:first-child
     margin-left: auto;
     margin-right: auto;
     margin-top: 15px;
+    text-align: center;
 }
+
+#box3
+{
+    width:900px;
+    padding: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    text-align: center;
+    font-size: 40px;
+}
+
+#login
+{
+    background-color: #4A4A4A;
+    width: 400px;
+    display: inline-block;
+    border: 2px solid #141414;
+    -webkit-box-shadow: 0px 0px 19px 3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 19px 3px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 19px 3px rgba(0,0,0,0.75);
+    border-radius: 5px;
+}
+
+#register
+{
+    background-color: #4A4A4A;
+    -webkit-box-shadow: 0px 0px 19px 3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 19px 3px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 19px 3px rgba(0,0,0,0.75);
+    border-radius: 5px;
+}
+
+#witamy
+{
+    width: 800px;
+    font-size: 20px;
+    background-color: #4A4A4A;
+    border-radius: 4px;
+    border: 2px solid #141414;
+    -webkit-box-shadow: 0px 0px 19px 3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 19px 3px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 19px 3px rgba(0,0,0,0.75);
+}
+
+input[type=text],
+input[type=password]
+{
+    width: 300px;
+    font-size: 35px;
+    background-color: #CCCCCC;
+    color: #4A4A4A;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 40px;
+    box-sizing: border-box;
+}
+
+input[type=text]:focus,
+input[type=password]:focus
+{
+    background-color: #74ADED;
+    color: #0058BD;
+}
+
+input:focus::-webkit-input-placeholder
+{
+    color: #0058BD;
+}
+
+input[type=checkbox]
+{
+    height: 20px;
+}
+
+input[type=submit]
+{
+    width: 300px;
+    height: 45px;
+    font-size: 25px;
+    letter-spacing: 5px;
+    border-radius: 4px;
+    margin-top: 30px;
+    background-color: #0058BD;
+    border: none;
+    color: white;
+}
+
+input[type=button]
+{
+    width: 300px;
+    height: 45px;
+    font-size: 25px;
+    letter-spacing: 5px;
+    border-radius: 4px;
+    margin-top: 30px;
+    background-color: #0058BD;
+    border: none;
+    color: white;
+    margin-bottom: 10px;
+}
+
+input[type=submit]:hover
+{
+    cursor: pointer;
+    background-color: #74ADED;
+}
+
+input[type=button]:hover
+{
+    cursor: pointer;
+    background-color: #74ADED;
+}
+
+span a
+{
+    color: white;
+    text-decoration: none;
+}
+
+span a:hover
+{
+    color: #74ADED;
+    font-size: 23px;
+}
+
 #content
 {
     background-color: #4A4A4A;
@@ -86,6 +216,7 @@ ol > li:first-child
     -webkit-box-shadow: 0px 0px 19px 3px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 19px 3px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 19px 3px rgba(0,0,0,0.75);
+    border-radius: 5px;
 }
 
 .picture
@@ -96,6 +227,7 @@ ol > li:first-child
     -webkit-box-shadow: 0px 0px 19px 3px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 19px 3px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 19px 3px rgba(0,0,0,0.75);
+    border-radius: 6px;
 }
 
 #user_list
@@ -106,6 +238,22 @@ ol > li:first-child
     min-height: 300px;
     padding: 20px;
     border: 2px solid #757575;
+    border-radius: 5px;
+}
+
+div > a
+{
+    color: white;
+    text-decoration: none;
+    line-height: 35px;
+    display: block;
+    border-radius: 5px;
+}
+
+div > a:hover
+{
+    background-color: #3694FF;
+    border-radius: 5px;
 }
 
 #foot
