@@ -143,6 +143,7 @@ if (isset($_POST['email']))
     <meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1"/>
     <title>Just Img! - Załóż darmowe konto!</title>
     <script src='https://www.google.com/recaptcha/api.js'></script>
+    <link rel="stylesheet" href="style.css" type="text/css"/>
     <style>
         .error
         {
@@ -155,56 +156,60 @@ if (isset($_POST['email']))
 </head>
 
 <body>
-
-<form method="post">
-    Nickname:</br> <input type="text" name="nick"/></br>
-    <?php
-    if (isset($_SESSION['e_nick']))
-    {
-        echo '<div class="error">'.$_SESSION['e_nick'].'</div>';
-        unset($_SESSION['e_nick']);
-    }
-    ?>
-    E-mail:</br> <input type="text" name="email"/></br>
-    <?php
-    if (isset($_SESSION['e_email']))
-    {
-        echo '<div class="error">'.$_SESSION['e_email'].'</div>';
-        unset($_SESSION['e_email']);
-    }
-    ?>
-    Hasło:</br> <input type="password" name="haslo1"/></br>
-    <?php
-    if (isset($_SESSION['e_haslo']))
-    {
-        echo '<div class="error">'.$_SESSION['e_haslo'].'</div>';
-        unset($_SESSION['e_haslo']);
-    }
-    ?>
-    Powtórz hasło:</br> <input type="password" name="haslo2"/></br>
-    Imię oraz nazwisko(np. Jan Kowalski):</br> <input type="text" name="imie_nazwisko"/></br>
-    Data urodzenia(Rok-miesiąc-dzień):<br><input type="text" name="data_urodzenia"><br>
-    Miejsce zamieszkania:<br><input type="text" name="zamieszkanie"><br>
-    <label><input type="checkbox" name="regulamin"/>Akceptuję regulamin</label>
-    <?php
-    if (isset($_SESSION['e_regulamin']))
-    {
-        echo '<div class="error">'.$_SESSION['e_regulamin'].'</div>';
-        unset($_SESSION['e_regulamin']);
-    }
-    ?>
-    <div class="g-recaptcha" data-sitekey="6Le32CkTAAAAAPtuFlU7B7l-vXrXYXwXINzboP-F"></div>
-    <?php
-    if (isset($_SESSION['e_bot']))
-    {
-        echo '<div class="error">'.$_SESSION['e_bot'].'</div>';
-        unset($_SESSION['e_bot']);
-    }
-    ?>
-    </br>
-    <input type="submit" value="Zarejestruj się"/>
-</form>
-
-
+<div id="box3">
+    <div id="register">
+        <form method="post">
+            <input type="text" name="nick" placeholder="Login"/></br>
+            <?php
+            if (isset($_SESSION['e_nick']))
+            {
+                echo '<div class="error">'.$_SESSION['e_nick'].'</div>';
+                unset($_SESSION['e_nick']);
+            }
+            ?>
+            <input type="text" name="email" placeholder="E-mail"/></br>
+            <?php
+            if (isset($_SESSION['e_email']))
+            {
+                echo '<div class="error">'.$_SESSION['e_email'].'</div>';
+                unset($_SESSION['e_email']);
+            }
+            ?>
+            <input type="password" name="haslo1" placeholder="Hasło"/></br>
+            <?php
+            if (isset($_SESSION['e_haslo']))
+            {
+                echo '<div class="error">'.$_SESSION['e_haslo'].'</div>';
+                unset($_SESSION['e_haslo']);
+            }
+            ?>
+            <input type="password" name="haslo2" placeholder="Powtórz hasło"/></br>
+            <input type="text" name="imie_nazwisko" placeholder="Imię i nazwisko"/></br>
+            <input type="text" name="data_urodzenia" placeholder="YYYY-MM-DD"><br>
+            <input type="text" name="zamieszkanie" placeholder="Miejsce zamieszkania"><br>
+            <label><input type="checkbox" name="regulamin"/>Akceptuję regulamin</label>
+            <?php
+            if (isset($_SESSION['e_regulamin']))
+            {
+                echo '<div class="error">'.$_SESSION['e_regulamin'].'</div>';
+                unset($_SESSION['e_regulamin']);
+            }
+            ?>
+            <br/>
+            <div style="display: inline-block">
+                <div class="g-recaptcha" data-sitekey="6Le32CkTAAAAAPtuFlU7B7l-vXrXYXwXINzboP-F"></div>
+                <?php
+                if (isset($_SESSION['e_bot']))
+                {
+                    echo '<div class="error">'.$_SESSION['e_bot'].'</div>';
+                    unset($_SESSION['e_bot']);
+                }
+                ?>
+            </div>
+            </br>
+            <input type="submit" value="Zarejestruj się"/>  <a href="index.php"><input type="button" value="Powrót"/></a><br/>
+        </form>
+    </div>
+</div>
 </body>
 </html>

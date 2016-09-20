@@ -1,5 +1,4 @@
 <?php
-require_once "functions.php";
 session_start();
 
 if (!isset($_SESSION['zalogowany']))
@@ -7,17 +6,25 @@ if (!isset($_SESSION['zalogowany']))
     header('Location: index.php');
     exit();
 }
-
+require_once "connect.php";
+require_once "functions.php";
+$polaczenie= @new mysqli($host,$db_user,$db_password,$db_name) or die('Error connecting to mysql');
+if($polaczenie->connect_errno!=0)
+{
+    echo "Error: ".$polaczenie->connect_errno;
+}
+$sql='SELECT * FROM pics WHERE id_u='.$_SESSION['id'];
+$rezultat=$polaczenie->query($sql);
+$ilosc=$rezultat->num_rows;
 ?>
 <!DOCTYPE HTML>
-<html lang="pl">
+<html lang="pl" xmlns="http://www.w3.org/1999/html">
 <head>
-    <meta charset="utf-8"/>
-    <meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1"/>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="x-ua-compatible" content="IE=edge, chrome=1"/>
     <link rel="stylesheet" href="style.css" type="text/css"/>
-    <title>Just Img!</title>
+    <title>Just Image! - Twoje Zdjęcia</title>
 </head>
-
 <body>
 <div id="box">
     <div id="menu">
@@ -25,16 +32,27 @@ if (!isset($_SESSION['zalogowany']))
             <li><?php echo $_SESSION['imie_nazwisko'];?></li>
             <li><a href="portal.php">Strona główna</a></li>
             <li><a href="my_pics.php">Moje zdjęcia</a></li>
+            <li><a href="add_photo.php">Dodaj zdjęcie</a></li>
             <li><a href="#">O autorach</a></li>
             <li><a href="logout.php">Wyloguj się</a></li>
         </ol>
     </div>
     <div id="box2">
         <div id="content">
-            <?php main_page();?>
+            <h1>Twoje zdjęcia!</h1>
+            <?php
+            for($i=0;$i<$ilosc;$i++)
+            {
+                $rows=$rezultat->fetch_assoc();
+                $pic=$rows['img_url'];
+                $data=$rows['date'];
+                echo '<div class="picture">'.$data.'<br/>'.'<img src="'.$pic.'" width="400px"/><br/>'.'</div>'.'<br/><br/>';
+            }
+            $polaczenie->close();
+            ?>
         </div>
         <div id="user_list">
-            <?php user_list(); ?>
+            <?php user_list()?>
         </div>
     </div>
     <div id="foot">
@@ -66,4 +84,5 @@ if (!isset($_SESSION['zalogowany']))
 
 </script>
 </body>
+
 </html>
