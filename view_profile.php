@@ -33,7 +33,7 @@ $ilosc=$rezultat2->num_rows;
     <meta charset="UTF-8"/>
     <meta http-equiv="x-ua-compatible" content="IE=edge, chrome=1"/>
     <link rel="stylesheet" href="style.css" type="text/css"/>
-    <title>Just Image!</title>
+    <title>Just Image! - <?php echo $imie_nazwisko; ?></title>
 </head>
 <body>
 <a href="portal.php"><input type="button" value="Powrót"/></a> <a href="logout.php"><input type="button" value="Wyloguj się!"/></a><br/>

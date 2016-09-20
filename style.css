@@ -42,6 +42,10 @@ body
 #user_list
 {
     float: left;
+    background-color: #B8B8B8;
+    width: 156px;
+    padding: 20px;
+    border: 2px solid #757575;
 }
 
 #foot
@@ -49,5 +53,15 @@ body
     width:100%;
     height:50px;
     background-color: #121212;
+    font-size: 43px;
     clear: both;
+}
+
+.sticky
+{
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
 }

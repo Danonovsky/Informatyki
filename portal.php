@@ -38,5 +38,30 @@ if (!isset($_SESSION['zalogowany']))
         Ble
     </div>
 </div>
+<script src="jquery-3.1.0.min.js" type="text/javascript"></script>
+<script>
+
+    $(document).ready(function() {
+        var stickyNavTop = $('#menu').offset().top;
+
+        var stickyNav = function(){
+            var scrollTop = $(window).scrollTop();
+
+            if (scrollTop > stickyNavTop) {
+                $('#menu').addClass('sticky');
+            } else {
+                $('#menu').removeClass('sticky');
+            }
+        };
+
+        stickyNav();
+
+        $(window).scroll(function() {
+            stickyNav();
+        });
+    });
+
+</script>
+
 </body>
 </html>
