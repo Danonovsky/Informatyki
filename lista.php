@@ -33,11 +33,9 @@ if (!isset($_SESSION['zalogowany']))
     </div>
     <div id="box2">
         <div id="content">
-            <?php main_page();?>
+            <?php users_all();?>
         </div>
-        <div id="user_list">
-            <?php user_list(); ?>
-        </div>
+
     </div>
     <div id="foot">
         Just Img! 2016 &copy; Wszelkie prawa zastrzeżone!

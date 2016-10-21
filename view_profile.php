@@ -70,7 +70,7 @@ $ilosc=$rezultat2->num_rows;
             ?>
         </div>
         <div id="user_list">
-            <?php user_list()?>
+            <?php user_list();?>
         </div>
     </div>
     <div id="foot">

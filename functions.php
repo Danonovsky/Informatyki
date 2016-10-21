@@ -53,4 +53,33 @@ function user_list()
     }
     $polaczenie->close();
 }
+function users_all()
+{
+    include "connect.php";
+    $polaczenie= new mysqli($host,$db_user,$db_password,$db_name) or die('Error connecting to mysql');
+    if($polaczenie->connect_errno!=0)
+    {
+        echo "Error: ".$polaczenie->connect_errno;
+    }
+    $sql="SELECT * FROM uzytkownicy";
+    $rezultat=$polaczenie->query($sql);
+    $ilosc=$rezultat->num_rows;
+    for($i=0;$i<$ilosc;$i++)
+    {
+        $row=$rezultat->fetch_assoc();
+        $userzy[$i]=$row['imie_nazwisko'];
+        $id_usera[$i]=$row['id_u'];
+        
+    }
+    for($i=0;$i<$ilosc;$i++)
+    {
+        if($id_usera[$i]!=$_SESSION['id'])
+            echo '<a href="view_profile.php?id_odw='.$id_usera[$i].'">'.$userzy[$i].'</a><br/>';
+    }
+    $polaczenie->close();
+}
 ?>
+
+?>
+
+
