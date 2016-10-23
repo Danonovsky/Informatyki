@@ -56,6 +56,7 @@ if(isset($_FILES['plik']['name']))
         else
         {
             echo 'Przesłanie udało się!<br/>';
+            echo $max_size.'<br/>';
         }
         $path_file=$folder.$p_nazwa_zm;
         //ważne date('Y m d');

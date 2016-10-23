@@ -79,7 +79,3 @@ function users_all()
     $polaczenie->close();
 }
 ?>
-
-?>
-
-

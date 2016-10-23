@@ -39,14 +39,22 @@ $ilosc=$rezultat->num_rows;
     </div>
     <div id="box2">
         <div id="content">
+            <?php
+            if(isset($_SESSION['alert']))
+            {
+                echo $_SESSION['alert'];
+                unset($_SESSION['alert']);
+            }
+            ?>
             <h1>Twoje zdjęcia!</h1>
             <?php
             for($i=0;$i<$ilosc;$i++)
             {
                 $rows=$rezultat->fetch_assoc();
+                $id_pic=$rows['id_pic'];
                 $pic=$rows['img_url'];
                 $data=$rows['date'];
-                echo '<div class="picture">'.$data.'<br/>'.'<img src="'.$pic.'" width="400px"/><br/>'.'</div>'.'<br/><br/>';
+                echo '<div class="picture">'.$data.'<a href="delete_photo.php?id_pic='.$id_pic.'"><input type="button" value="X"/></a><br/>'.'<img src="'.$pic.'" width="400px"/><br/>'.'</div>'.'<br/><br/>';
             }
             $polaczenie->close();
             ?>

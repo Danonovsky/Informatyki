@@ -1,13 +1,11 @@
 <?php
 require_once "functions.php";
 session_start();
-
 if (!isset($_SESSION['zalogowany']))
 {
     header('Location: index.php');
     exit();
 }
-
 ?>
 <!DOCTYPE HTML>
 <html lang="pl">
@@ -17,7 +15,6 @@ if (!isset($_SESSION['zalogowany']))
     <link rel="stylesheet" href="style.css" type="text/css"/>
     <title>Just Img!</title>
 </head>
-
 <body>
 <div id="box">
     <div id="menu">

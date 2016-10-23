@@ -63,7 +63,7 @@ else {
         }
 
     }
-    $polaczenie->close();
-}
 
+}
+$polaczenie->close();
 ?>
